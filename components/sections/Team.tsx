@@ -46,10 +46,10 @@ const team: Member[] = [
   { name: "Ankit Sharma", role: "Team Leader", photo: "/team/ankit.jpg" },
   { name: "Monika Ladha", role: "Team Leader", photo: "/team/monika.jpg" },
   { name: "Yukta Lahoti", role: "Team Leader", photo: "/team/yukta.jpg" },
-  { name: "Vaibhav Rampuria", role: "Sr. Accountant", photo: "/team/vaibhav.jpg" },
-  { name: "Bhakti Lahoti", role: "Sr. Accountant", photo: "/team/bhakti.jpg" },
-  { name: "Sanskar Jain", role: "Jr. Accountant", photo: "/team/sanskar.jpg" },
-  { name: "Naman Jain", role: "Jr. Accountant", photo: "/team/naman.jpg" },
+  { name: "Vaibhav Rampuria", role: "Sr. Accountant" },
+  { name: "Bhakti Lahoti", role: "Sr. Accountant" },
+  { name: "Sanskar Jain", role: "Jr. Accountant" },
+  { name: "Naman Jain", role: "Jr. Accountant" },
 ];
 
 const gradients = [
@@ -91,14 +91,15 @@ function Avatar({
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={src}
-          alt={name}
-          className="absolute inset-0 h-full w-full rounded-full object-cover"
+          alt=""
+          className="absolute inset-0 h-full w-full rounded-full object-cover object-top"
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).style.display = "none";
           }}
         />
-      ) : null}
-      <span className="relative z-10 select-none">{getInitials(name)}</span>
+      ) : (
+        <span className="relative z-10 select-none">{getInitials(name)}</span>
+      )}
     </div>
   );
 }
@@ -162,7 +163,7 @@ export function Team() {
                     <img
                       src={founder.photo}
                       alt={founder.name}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover object-top"
                       onError={(e) => {
                         (e.currentTarget as HTMLImageElement).style.display =
                           "none";
