@@ -96,7 +96,7 @@ export const BoxLogo = makeImgLogo("/documents/box.jpg", "Box", 1.5);
 
 export const NotionLogo = makeImgLogo("/documents/notion.png", "Notion", 2.4);
 
-export const AdobeAcrobatLogo = makeImgLogo("/documents/adobe-acrobat.png", "Adobe Acrobat", 1.8);
+export const AdobeAcrobatLogo = makeImgLogo("/documents/adobe-acrobat.png", "Adobe Acrobat", 1.0);
 
 export const ICloudLogo = makeImgLogo("/documents/icloud.png", "iCloud", 1.6);
 
