@@ -9,6 +9,9 @@ type ImgLogoProps = {
 
 // scale visually enlarges logos whose source PNG bakes in transparent
 // padding so much that the mark renders small inside its container.
+// maxWidth keeps very wide source images from blowing out of their card —
+// the parent card is constrained, and we want the logo to shrink to fit
+// instead of overflowing horizontally.
 function makeImgLogo(src: string, alt: string, scale = 1) {
   return function ImgLogo({ className, style }: ImgLogoProps) {
     // eslint-disable-next-line @next/next/no-img-element
@@ -19,6 +22,7 @@ function makeImgLogo(src: string, alt: string, scale = 1) {
         className={className}
         style={{
           objectFit: "contain",
+          maxWidth: "100%",
           ...(scale !== 1 ? { transform: `scale(${scale})` } : null),
           ...style,
         }}
