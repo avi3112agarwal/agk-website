@@ -329,13 +329,13 @@ export function ShopifyLogo(props: LogoProps) {
 
 /* -------------------- Communication -------------------- */
 
-export const WhatsAppLogo = makeImgLogo("/communication/whatsapp.png", "WhatsApp", 2.5);
+export const WhatsAppLogo = makeImgLogo("/communication/whatsapp.png", "WhatsApp", 3.6);
 
-export const OutlookLogo = makeImgLogo("/communication/outlook.png", "Outlook", 2.5);
+export const OutlookLogo = makeImgLogo("/communication/outlook.png", "Outlook", 3.6);
 
-export const GmailLogo = makeImgLogo("/communication/gmail.png", "Gmail", 2.5);
+export const GmailLogo = makeImgLogo("/communication/gmail.png", "Gmail", 3.6);
 
-export const SkypeLogo = makeImgLogo("/communication/skype.png", "Skype", 2.5);
+export const SkypeLogo = makeImgLogo("/communication/skype.png", "Skype", 3.2);
 
 export const ZoomLogo = makeImgLogo("/communication/zoom.jpg", "Zoom", 1.6);
 
