@@ -710,7 +710,7 @@ async function buildDeck() {
     });
 
     // Photo with glow
-    const photoPath = path.join(__dirname, "public", "team", "avi-agarwal.jpg");
+    const photoPath = path.join(__dirname, "public", "team", "avi-agarwal.png");
     // Glow halo behind photo
     decorOval(s, 0.2, 1.5, 3.7, C.cyan, 60);
     // Photo background frame

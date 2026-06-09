@@ -7,11 +7,11 @@ import { Award, BookOpen, Sparkles, Users, Linkedin, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // To use real photos: drop files into /public/team/ and set the `photo` field
-// (e.g. photo: "/team/avi-agarwal.jpg"). Otherwise gradient initials are shown.
+// (e.g. photo: "/team/avi-agarwal.png"). Otherwise gradient initials are shown.
 const founder = {
   name: "Avi Agarwal",
   role: "Founder — Anant Global KPO",
-  photo: "/team/avi-agarwal.jpg" as string | undefined,
+  photo: "/team/avi-agarwal.png" as string | undefined,
   specialties: ["CA", "Taxation", "Audit", "Virtual CFO"],
   bioParagraphs: [
     "Avi Agarwal is a Chartered Accountant (equivalent to CPA) with over five years of hands-on experience in accounting, taxation, and auditing. Known for his precision and efficiency, he helps businesses and individuals navigate complex financial landscapes with confidence. As a certified QuickBooks ProAdvisor and ZOHO specialist, Avi leverages modern tools to streamline financial operations and ensure compliance. His approach combines deep technical knowledge with a collaborative leadership style, fostering strong client relationships and high-performing teams.",
@@ -43,6 +43,7 @@ const founder = {
 
 type Member = { name: string; role: string; photo?: string };
 const team: Member[] = [
+  { name: "Ankit Sharma", role: "Team Leader", photo: "/team/ankit.jpg" },
   { name: "Monika Ladha", role: "Team Leader", photo: "/team/monika.jpg" },
   { name: "Yukta Lahoti", role: "Team Leader", photo: "/team/yukta.jpg" },
   { name: "Vaibhav Rampuria", role: "Sr. Accountant", photo: "/team/vaibhav.jpg" },
