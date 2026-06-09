@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Calculator, MessageSquare, FolderOpen } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -100,43 +100,52 @@ export function Software() {
           })}
         </div>
 
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={tab}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-            className="mt-10"
-          >
-            <p className="mx-auto max-w-xl text-center text-sm text-ink-600">
-              {active.desc}
-            </p>
+        {/* All three tab panels rendered simultaneously so logos load once
+            (via lazy attribute) when this section enters the viewport, and
+            switching tabs becomes a pure CSS opacity swap — no React
+            unmount, no re-fetch of cached images, no flicker. */}
+        <div className="relative mt-10">
+          {categories.map((cat) => {
+            const isActive = tab === cat.id;
+            return (
+              <motion.div
+                key={cat.id}
+                animate={{ opacity: isActive ? 1 : 0 }}
+                transition={{ duration: 0.25 }}
+                aria-hidden={!isActive}
+                className={cn(
+                  isActive
+                    ? "relative"
+                    : "pointer-events-none absolute inset-0",
+                )}
+              >
+                <p className="mx-auto max-w-xl text-center text-sm text-ink-600">
+                  {cat.desc}
+                </p>
 
-            <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-              {active.logos.map((app, i) => (
-                <motion.div
-                  key={`${tab}-${app.name}-${i}`}
-                  initial={{ opacity: 0, y: 14, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.35, delay: i * 0.04 }}
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  className={cn(
-                    "group relative flex h-24 items-center justify-center overflow-hidden rounded-2xl border border-ink-100 bg-white px-5 shadow-soft transition-all hover:border-brand-300 hover:shadow-glow",
-                  )}
-                >
-                  <span
-                    className={cn(
-                      "pointer-events-none absolute inset-x-0 bottom-0 h-[3px] origin-left scale-x-0 bg-gradient-to-r transition-transform duration-300 group-hover:scale-x-100",
-                      active.accent,
-                    )}
-                  />
-                  <app.Logo className="h-9 w-auto opacity-85 transition group-hover:opacity-100" />
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </AnimatePresence>
+                <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                  {cat.logos.map((app, i) => (
+                    <motion.div
+                      key={`${cat.id}-${app.name}-${i}`}
+                      whileHover={{ y: -4, scale: 1.02 }}
+                      className={cn(
+                        "group relative flex h-24 items-center justify-center overflow-hidden rounded-2xl border border-ink-100 bg-white px-5 shadow-soft transition-all hover:border-brand-300 hover:shadow-glow",
+                      )}
+                    >
+                      <span
+                        className={cn(
+                          "pointer-events-none absolute inset-x-0 bottom-0 h-[3px] origin-left scale-x-0 bg-gradient-to-r transition-transform duration-300 group-hover:scale-x-100",
+                          cat.accent,
+                        )}
+                      />
+                      <app.Logo className="h-9 w-auto opacity-85 transition group-hover:opacity-100" />
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
 
         {/* Marquee strip — always shows full accounting roster */}
         <div className="relative mt-16 overflow-hidden rounded-2xl border border-ink-100 bg-ink-50/40 py-6">
