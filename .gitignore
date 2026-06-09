@@ -9,3 +9,9 @@ out
 
 # Generated PPT deliverables (regenerate locally with `node build-onboarding-deck.js`)
 *.pptx
+
+# Next.js incremental TypeScript build info
+tsconfig.tsbuildinfo
+
+# Raw source logos before they're cleaned up into public/communication/
+Communcation Logo/

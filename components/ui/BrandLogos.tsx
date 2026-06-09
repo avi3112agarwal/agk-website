@@ -2,6 +2,25 @@ import { SVGProps } from "react";
 
 type LogoProps = SVGProps<SVGSVGElement>;
 
+type ImgLogoProps = {
+  className?: string;
+  style?: React.CSSProperties;
+};
+
+function makeImgLogo(src: string, alt: string) {
+  return function ImgLogo({ className, style }: ImgLogoProps) {
+    // eslint-disable-next-line @next/next/no-img-element
+    return (
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        style={{ objectFit: "contain", ...style }}
+      />
+    );
+  };
+}
+
 export function QuickBooksLogo(props: LogoProps) {
   return (
     <svg viewBox="0 0 160 40" fill="none" {...props}>
@@ -304,252 +323,31 @@ export function ShopifyLogo(props: LogoProps) {
 
 /* -------------------- Communication -------------------- */
 
-export function WhatsAppLogo(props: LogoProps) {
-  return (
-    <svg viewBox="0 0 150 40" fill="none" {...props}>
-      <circle cx="20" cy="20" r="14" fill="#25D366" />
-      <path
-        d="M14 26l1.4-4A8 8 0 1119 26h-.5L14 26z"
-        fill="#fff"
-        stroke="#fff"
-        strokeWidth="0.5"
-      />
-      <text
-        x="40"
-        y="26"
-        fill="#075E54"
-        fontSize="14"
-        fontWeight="800"
-        fontFamily="Inter, sans-serif"
-      >
-        WhatsApp
-      </text>
-    </svg>
-  );
-}
+export const WhatsAppLogo = makeImgLogo("/communication/whatsapp.png", "WhatsApp");
 
-export function OutlookLogo(props: LogoProps) {
-  return (
-    <svg viewBox="0 0 140 40" fill="none" {...props}>
-      <rect x="4" y="8" width="24" height="24" rx="3" fill="#0078D4" />
-      <text
-        x="16"
-        y="26"
-        textAnchor="middle"
-        fill="#fff"
-        fontSize="16"
-        fontWeight="800"
-        fontFamily="Inter, sans-serif"
-      >
-        O
-      </text>
-      <text
-        x="34"
-        y="26"
-        fill="#0078D4"
-        fontSize="14"
-        fontWeight="700"
-        fontFamily="Inter, sans-serif"
-      >
-        Outlook
-      </text>
-    </svg>
-  );
-}
+export const OutlookLogo = makeImgLogo("/communication/outlook.png", "Outlook");
 
-export function GmailLogo(props: LogoProps) {
-  return (
-    <svg viewBox="0 0 130 40" fill="none" {...props}>
-      <path d="M4 12l14 10 14-10v18H4V12z" fill="#fff" />
-      <path d="M4 12v18h6V18L4 12z" fill="#4285F4" />
-      <path d="M32 12v18h-6V18l6-6z" fill="#34A853" />
-      <path d="M4 12l14 10L32 12l-2-4-12 8L6 8 4 12z" fill="#EA4335" />
-      <path d="M18 22l8-6v14h-8v-8z" fill="#FBBC04" />
-      <text
-        x="40"
-        y="26"
-        fill="#1B1B1B"
-        fontSize="15"
-        fontWeight="700"
-        fontFamily="Inter, sans-serif"
-      >
-        Gmail
-      </text>
-    </svg>
-  );
-}
+export const GmailLogo = makeImgLogo("/communication/gmail.png", "Gmail");
 
-export function SkypeLogo(props: LogoProps) {
-  return (
-    <svg viewBox="0 0 130 40" fill="none" {...props}>
-      <circle cx="20" cy="20" r="14" fill="#00AFF0" />
-      <text
-        x="20"
-        y="25"
-        textAnchor="middle"
-        fill="#fff"
-        fontSize="14"
-        fontWeight="800"
-        fontFamily="Inter, sans-serif"
-      >
-        S
-      </text>
-      <text
-        x="38"
-        y="26"
-        fill="#00AFF0"
-        fontSize="15"
-        fontWeight="800"
-        fontFamily="Inter, sans-serif"
-      >
-        Skype
-      </text>
-    </svg>
-  );
-}
+export const SkypeLogo = makeImgLogo("/communication/skype.png", "Skype");
 
-export function ZoomLogo(props: LogoProps) {
-  return (
-    <svg viewBox="0 0 130 40" fill="none" {...props}>
-      <rect x="4" y="10" width="24" height="20" rx="5" fill="#2D8CFF" />
-      <path d="M11 16h7l5-3v14l-5-3h-7z" fill="#fff" />
-      <text
-        x="34"
-        y="26"
-        fill="#2D8CFF"
-        fontSize="16"
-        fontWeight="800"
-        fontFamily="Inter, sans-serif"
-      >
-        zoom
-      </text>
-    </svg>
-  );
-}
+export const ZoomLogo = makeImgLogo("/communication/zoom.jpg", "Zoom");
 
-export function MicrosoftTeamsLogo(props: LogoProps) {
-  return (
-    <svg viewBox="0 0 160 40" fill="none" {...props}>
-      <rect x="4" y="8" width="24" height="24" rx="3" fill="#4B53BC" />
-      <text
-        x="16"
-        y="27"
-        textAnchor="middle"
-        fill="#fff"
-        fontSize="18"
-        fontWeight="800"
-        fontFamily="Inter, sans-serif"
-      >
-        T
-      </text>
-      <text
-        x="34"
-        y="22"
-        fill="#4B53BC"
-        fontSize="11"
-        fontWeight="700"
-        fontFamily="Inter, sans-serif"
-      >
-        Microsoft
-      </text>
-      <text
-        x="34"
-        y="34"
-        fill="#4B53BC"
-        fontSize="13"
-        fontWeight="800"
-        fontFamily="Inter, sans-serif"
-      >
-        Teams
-      </text>
-    </svg>
-  );
-}
+export const MicrosoftTeamsLogo = makeImgLogo(
+  "/communication/teams.png",
+  "Microsoft Teams",
+);
 
-export function SlackLogo(props: LogoProps) {
-  return (
-    <svg viewBox="0 0 120 40" fill="none" {...props}>
-      {/* Stylised hash arrangement */}
-      <rect x="9" y="6" width="5" height="14" rx="2.5" fill="#E01E5A" />
-      <rect x="16" y="14" width="14" height="5" rx="2.5" fill="#36C5F0" />
-      <rect x="18" y="22" width="5" height="14" rx="2.5" fill="#2EB67D" transform="translate(0 -16) rotate(180 20.5 22)" />
-      <rect x="6" y="22" width="14" height="5" rx="2.5" fill="#ECB22E" />
-      <text
-        x="38"
-        y="26"
-        fill="#1B1B1B"
-        fontSize="16"
-        fontWeight="800"
-        fontFamily="Inter, sans-serif"
-      >
-        slack
-      </text>
-    </svg>
-  );
-}
+export const SlackLogo = makeImgLogo("/communication/slack.png", "Slack");
 
-export function TelegramLogo(props: LogoProps) {
-  return (
-    <svg viewBox="0 0 140 40" fill="none" {...props}>
-      <circle cx="20" cy="20" r="14" fill="#26A5E4" />
-      <path
-        d="M13 20l13-5-2 11-4-2-2 3-1-4 7-6-9 4z"
-        fill="#fff"
-      />
-      <text
-        x="40"
-        y="26"
-        fill="#26A5E4"
-        fontSize="14"
-        fontWeight="800"
-        fontFamily="Inter, sans-serif"
-      >
-        Telegram
-      </text>
-    </svg>
-  );
-}
+export const TelegramLogo = makeImgLogo("/communication/telegram.png", "Telegram");
 
-export function GoogleMeetLogo(props: LogoProps) {
-  return (
-    <svg viewBox="0 0 150 40" fill="none" {...props}>
-      <rect x="6" y="12" width="20" height="16" rx="3" fill="#00897B" />
-      <path d="M26 16l8-3v14l-8-3z" fill="#00AC47" />
-      <path d="M6 12h6v16H6z" fill="#FFBA00" />
-      <path d="M12 28h14v-4H12z" fill="#EA4335" opacity="0.9" />
-      <text
-        x="42"
-        y="26"
-        fill="#1B1B1B"
-        fontSize="13"
-        fontWeight="700"
-        fontFamily="Inter, sans-serif"
-      >
-        Google Meet
-      </text>
-    </svg>
-  );
-}
+export const GoogleMeetLogo = makeImgLogo(
+  "/communication/google-meet.png",
+  "Google Meet",
+);
 
-export function WebexLogo(props: LogoProps) {
-  return (
-    <svg viewBox="0 0 130 40" fill="none" {...props}>
-      <circle cx="20" cy="20" r="13" fill="#00BCEB" />
-      <circle cx="16" cy="20" r="4" fill="#fff" />
-      <circle cx="24" cy="20" r="4" fill="#fff" />
-      <text
-        x="38"
-        y="26"
-        fill="#00BCEB"
-        fontSize="15"
-        fontWeight="800"
-        fontFamily="Inter, sans-serif"
-      >
-        Webex
-      </text>
-    </svg>
-  );
-}
+export const WebexLogo = makeImgLogo("/communication/webex.svg", "Webex");
 
 /* -------------------- Document storage -------------------- */
 
