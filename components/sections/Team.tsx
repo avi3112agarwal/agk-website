@@ -48,11 +48,14 @@ type Member = {
   // photoScale: zoom the photo inside the round avatar mask. Use when the
   // source image frames the subject too wide and the face ends up too small.
   photoScale?: number;
+  // photoPosition: CSS object-position value to shift the crop window onto
+  // the face (e.g. "30% 20%" when the subject is in the top-left of the frame).
+  photoPosition?: string;
 };
 const team: Member[] = [
-  { name: "Ankit Sharma", role: "Team Leader", photo: "/team/ankit.jpg", photoScale: 1.4 },
+  { name: "Ankit Sharma", role: "Team Leader", photo: "/team/ankit.jpg", photoScale: 1.6, photoPosition: "center 28%" },
   { name: "Monika Ladha", role: "Team Leader", photo: "/team/monika.jpg" },
-  { name: "Yukta Lahoti", role: "Team Leader", photo: "/team/yukta.jpg", photoScale: 1.5 },
+  { name: "Yukta Lahoti", role: "Team Leader", photo: "/team/yukta.jpg", photoScale: 1.8, photoPosition: "32% 22%" },
   { name: "Vaibhav Rampuria", role: "Sr. Accountant" },
   { name: "Bhakti Lahoti", role: "Sr. Accountant" },
   { name: "Sanskar Jain", role: "Jr. Accountant" },
@@ -82,12 +85,21 @@ function Avatar({
   src,
   gradient,
   scale,
+  position,
 }: {
   name: string;
   src?: string;
   gradient: string;
   scale?: number;
+  position?: string;
 }) {
+  const imgStyle: React.CSSProperties = {
+    objectPosition: position ?? "center top",
+  };
+  if (scale) {
+    imgStyle.transform = `scale(${scale})`;
+    imgStyle.transformOrigin = position ?? "center top";
+  }
   return (
     <div
       className={cn(
@@ -101,8 +113,8 @@ function Avatar({
         <img
           src={src}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover object-top"
-          style={scale ? { transform: `scale(${scale})`, transformOrigin: "center top" } : undefined}
+          className="absolute inset-0 h-full w-full object-cover"
+          style={imgStyle}
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).style.display = "none";
           }}
@@ -322,6 +334,7 @@ export function Team() {
                     src={m.photo}
                     gradient={gradients[i % gradients.length]}
                     scale={m.photoScale}
+                    position={m.photoPosition}
                   />
                 </div>
 
