@@ -19,6 +19,8 @@ function makeImgLogo(src: string, alt: string, scale = 1) {
       <img
         src={src}
         alt={alt}
+        loading="lazy"
+        decoding="async"
         className={className}
         style={{
           objectFit: "contain",
