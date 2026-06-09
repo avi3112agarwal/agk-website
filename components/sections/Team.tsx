@@ -41,11 +41,18 @@ const founder = {
   ],
 };
 
-type Member = { name: string; role: string; photo?: string };
+type Member = {
+  name: string;
+  role: string;
+  photo?: string;
+  // photoScale: zoom the photo inside the round avatar mask. Use when the
+  // source image frames the subject too wide and the face ends up too small.
+  photoScale?: number;
+};
 const team: Member[] = [
-  { name: "Ankit Sharma", role: "Team Leader", photo: "/team/ankit.jpg" },
+  { name: "Ankit Sharma", role: "Team Leader", photo: "/team/ankit.jpg", photoScale: 1.4 },
   { name: "Monika Ladha", role: "Team Leader", photo: "/team/monika.jpg" },
-  { name: "Yukta Lahoti", role: "Team Leader", photo: "/team/yukta.jpg" },
+  { name: "Yukta Lahoti", role: "Team Leader", photo: "/team/yukta.jpg", photoScale: 1.5 },
   { name: "Vaibhav Rampuria", role: "Sr. Accountant" },
   { name: "Bhakti Lahoti", role: "Sr. Accountant" },
   { name: "Sanskar Jain", role: "Jr. Accountant" },
@@ -74,15 +81,17 @@ function Avatar({
   name,
   src,
   gradient,
+  scale,
 }: {
   name: string;
   src?: string;
   gradient: string;
+  scale?: number;
 }) {
   return (
     <div
       className={cn(
-        "relative inline-flex h-24 w-24 items-center justify-center rounded-full font-display text-xl font-bold text-white shadow-soft ring-4 ring-white",
+        "relative inline-flex h-24 w-24 items-center justify-center overflow-hidden rounded-full font-display text-xl font-bold text-white shadow-soft ring-4 ring-white",
         "bg-gradient-to-br",
         gradient,
       )}
@@ -92,7 +101,8 @@ function Avatar({
         <img
           src={src}
           alt=""
-          className="absolute inset-0 h-full w-full rounded-full object-cover object-top"
+          className="absolute inset-0 h-full w-full object-cover object-top"
+          style={scale ? { transform: `scale(${scale})`, transformOrigin: "center top" } : undefined}
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).style.display = "none";
           }}
@@ -311,6 +321,7 @@ export function Team() {
                     name={m.name}
                     src={m.photo}
                     gradient={gradients[i % gradients.length]}
+                    scale={m.photoScale}
                   />
                 </div>
 
