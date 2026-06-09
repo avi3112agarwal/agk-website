@@ -27,27 +27,29 @@ function makeImgLogo(src: string, alt: string, scale = 1) {
   };
 }
 
-export const QuickBooksLogo = makeImgLogo("/accounting/quickbooks.jpg", "QuickBooks Online");
+export const QuickBooksLogo = makeImgLogo("/accounting/quickbooks.jpg", "QuickBooks Online", 1.8);
 
-export const QuickBooksDesktopLogo = makeImgLogo("/accounting/quickbooks.jpg", "QuickBooks Desktop");
+export const QuickBooksDesktopLogo = makeImgLogo("/accounting/quickbooks.jpg", "QuickBooks Desktop", 1.8);
 
-export const XeroLogo = makeImgLogo("/accounting/xero.svg", "Xero");
+export const XeroLogo = makeImgLogo("/accounting/xero.svg", "Xero", 2.5);
 
-export const NetSuiteLogo = makeImgLogo("/accounting/netsuite.png", "NetSuite");
+export const NetSuiteLogo = makeImgLogo("/accounting/netsuite.png", "NetSuite", 1.5);
 
-export const OracleNetSuiteLogo = makeImgLogo("/accounting/netsuite.png", "Oracle NetSuite");
+export const OracleNetSuiteLogo = makeImgLogo("/accounting/netsuite.png", "Oracle NetSuite", 1.5);
 
-export const ZohoLogo = makeImgLogo("/accounting/zoho.png", "Zoho Books");
+export const ZohoLogo = makeImgLogo("/accounting/zoho.webp", "Zoho Books", 1.8);
 
 export const SageLogo = makeImgLogo("/accounting/sage.png", "Sage");
 
-export const YardiLogo = makeImgLogo("/accounting/yardi.png", "Yardi");
+export const YardiLogo = makeImgLogo("/accounting/yardi.png", "Yardi", 1.8);
 
-export const AppFolioLogo = makeImgLogo("/accounting/appfolio.png", "AppFolio");
+export const AppFolioLogo = makeImgLogo("/accounting/appfolio.png", "AppFolio", 1.5);
 
-export const WaveLogo = makeImgLogo("/accounting/wave.png", "Wave");
+export const WaveLogo = makeImgLogo("/accounting/wave.png", "Wave", 1.4);
 
-export const ShopifyLogo = makeImgLogo("/accounting/shopify.webp", "Shopify");
+export const ShopifyLogo = makeImgLogo("/accounting/shopify.svg", "Shopify", 1.5);
+
+export const ProfitBooksLogo = makeImgLogo("/accounting/profitbooks.png", "ProfitBooks", 1.8);
 
 /* -------------------- Communication -------------------- */
 
@@ -332,6 +334,7 @@ export const accountingLogos = [
   { name: "AppFolio", Logo: AppFolioLogo },
   { name: "Wave", Logo: WaveLogo },
   { name: "Shopify", Logo: ShopifyLogo },
+  { name: "ProfitBooks", Logo: ProfitBooksLogo },
 ];
 
 export const communicationLogos = [
