@@ -27,29 +27,29 @@ function makeImgLogo(src: string, alt: string, scale = 1) {
   };
 }
 
-export const QuickBooksLogo = makeImgLogo("/accounting/quickbooks.jpg", "QuickBooks Online", 1.8);
+export const QuickBooksLogo = makeImgLogo("/accounting/quickbooks.jpg", "QuickBooks", 2.4);
 
-export const QuickBooksDesktopLogo = makeImgLogo("/accounting/quickbooks.jpg", "QuickBooks Desktop", 1.8);
+export const QuickBooksDesktopLogo = makeImgLogo("/accounting/quickbooks.jpg", "QuickBooks Desktop", 2.4);
 
 export const XeroLogo = makeImgLogo("/accounting/xero.svg", "Xero", 2.5);
 
-export const NetSuiteLogo = makeImgLogo("/accounting/netsuite.png", "NetSuite", 1.5);
+export const NetSuiteLogo = makeImgLogo("/accounting/netsuite.png", "NetSuite", 2.2);
 
-export const OracleNetSuiteLogo = makeImgLogo("/accounting/netsuite.png", "Oracle NetSuite", 1.5);
+export const OracleNetSuiteLogo = makeImgLogo("/accounting/netsuite.png", "Oracle NetSuite", 2.2);
 
-export const ZohoLogo = makeImgLogo("/accounting/zoho.webp", "Zoho Books", 1.8);
+export const ZohoLogo = makeImgLogo("/accounting/zoho.webp", "Zoho Books", 2.4);
 
 export const SageLogo = makeImgLogo("/accounting/sage.png", "Sage");
 
-export const YardiLogo = makeImgLogo("/accounting/yardi.png", "Yardi", 1.8);
+export const YardiLogo = makeImgLogo("/accounting/yardi.png", "Yardi", 2.4);
 
-export const AppFolioLogo = makeImgLogo("/accounting/appfolio.png", "AppFolio", 1.5);
+export const AppFolioLogo = makeImgLogo("/accounting/appfolio.png", "AppFolio", 2.2);
 
 export const WaveLogo = makeImgLogo("/accounting/wave.png", "Wave", 1.4);
 
 export const ShopifyLogo = makeImgLogo("/accounting/shopify.svg", "Shopify", 1.5);
 
-export const ProfitBooksLogo = makeImgLogo("/accounting/profitbooks.png", "ProfitBooks", 1.8);
+export const ProfitBooksLogo = makeImgLogo("/accounting/profitbooks.png", "ProfitBooks", 2.4);
 
 /* -------------------- Communication -------------------- */
 
@@ -324,8 +324,7 @@ export function ICloudLogo(props: LogoProps) {
 /* -------------------- Catalog -------------------- */
 
 export const accountingLogos = [
-  { name: "QuickBooks Online", Logo: QuickBooksLogo },
-  { name: "QuickBooks Desktop", Logo: QuickBooksDesktopLogo },
+  { name: "QuickBooks", Logo: QuickBooksLogo },
   { name: "Xero", Logo: XeroLogo },
   { name: "Oracle NetSuite", Logo: OracleNetSuiteLogo },
   { name: "Zoho Books", Logo: ZohoLogo },
