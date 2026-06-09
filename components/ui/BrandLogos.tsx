@@ -37,7 +37,7 @@ export const NetSuiteLogo = makeImgLogo("/accounting/netsuite.png", "NetSuite", 
 
 export const OracleNetSuiteLogo = makeImgLogo("/accounting/netsuite.png", "Oracle NetSuite", 2.2);
 
-export const ZohoLogo = makeImgLogo("/accounting/zoho.webp", "Zoho Books", 2.4);
+export const ZohoLogo = makeImgLogo("/accounting/zoho.webp", "Zoho Books", 3.2);
 
 export const SageLogo = makeImgLogo("/accounting/sage.png", "Sage");
 

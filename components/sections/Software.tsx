@@ -142,7 +142,7 @@ export function Software() {
         <div className="relative mt-16 overflow-hidden rounded-2xl border border-ink-100 bg-ink-50/40 py-6">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-white to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-white to-transparent" />
-          <div className="flex w-max animate-marquee items-center gap-12 px-6">
+          <div className="flex w-max animate-marquee items-center gap-24 px-6">
             {marquee.map((app, i) => (
               <app.Logo
                 key={`${app.name}-${i}`}
