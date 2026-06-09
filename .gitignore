@@ -13,6 +13,7 @@ out
 # Next.js incremental TypeScript build info
 tsconfig.tsbuildinfo
 
-# Raw source logos before they're cleaned up into public/communication/ and public/accounting/
+# Raw source logos before they're cleaned up into public/{communication,accounting,documents}/
 Communcation Logo/
 Accounting Softwate logos/
+Document Storage Logos/
