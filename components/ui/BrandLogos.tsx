@@ -82,21 +82,21 @@ export const WebexLogo = makeImgLogo("/communication/webex.svg", "Webex", 1.7);
 
 /* -------------------- Document storage -------------------- */
 
-export const SharePointLogo = makeImgLogo("/documents/sharepoint.png", "SharePoint", 1.6);
+export const SharePointLogo = makeImgLogo("/documents/sharepoint.png", "SharePoint", 2.2);
 
 export const OneDriveLogo = makeImgLogo("/documents/onedrive.png", "OneDrive", 1.6);
 
-export const GoogleDriveLogo = makeImgLogo("/documents/google-drive.png", "Google Drive", 1.8);
+export const GoogleDriveLogo = makeImgLogo("/documents/google-drive.png", "Google Drive", 2.4);
 
 export const WeTransferLogo = makeImgLogo("/documents/wetransfer.png", "WeTransfer", 1.8);
 
-export const DropboxLogo = makeImgLogo("/documents/dropbox.png", "Dropbox", 1.6);
+export const DropboxLogo = makeImgLogo("/documents/dropbox.png", "Dropbox", 2.2);
 
 export const BoxLogo = makeImgLogo("/documents/box.jpg", "Box", 1.5);
 
-export const NotionLogo = makeImgLogo("/documents/notion.png", "Notion", 1.8);
+export const NotionLogo = makeImgLogo("/documents/notion.png", "Notion", 2.4);
 
-export const AdobeAcrobatLogo = makeImgLogo("/documents/adobe-acrobat.png", "Adobe Acrobat", 1.8);
+export const AdobeAcrobatLogo = makeImgLogo("/documents/adobe-acrobat.svg", "Adobe Acrobat", 1.8);
 
 export const ICloudLogo = makeImgLogo("/documents/icloud.png", "iCloud", 1.6);
 
