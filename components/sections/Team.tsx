@@ -53,9 +53,9 @@ type Member = {
   photoPosition?: string;
 };
 const team: Member[] = [
-  { name: "Ankit Sharma", role: "Team Leader", photo: "/team/ankit.jpg", photoScale: 1.6, photoPosition: "center 28%" },
+  { name: "Ankit Sharma", role: "Team Leader", photo: "/team/ankit.jpg", photoScale: 1.9, photoPosition: "center 18%" },
   { name: "Monika Ladha", role: "Team Leader", photo: "/team/monika.jpg" },
-  { name: "Yukta Lahoti", role: "Team Leader", photo: "/team/yukta.jpg", photoScale: 1.8, photoPosition: "32% 22%" },
+  { name: "Yukta Lahoti", role: "Team Leader", photo: "/team/yukta.jpg", photoScale: 2.2, photoPosition: "30% 10%" },
   { name: "Vaibhav Rampuria", role: "Sr. Accountant" },
   { name: "Bhakti Lahoti", role: "Sr. Accountant" },
   { name: "Sanskar Jain", role: "Jr. Accountant" },
@@ -93,13 +93,6 @@ function Avatar({
   scale?: number;
   position?: string;
 }) {
-  const imgStyle: React.CSSProperties = {
-    objectPosition: position ?? "center top",
-  };
-  if (scale) {
-    imgStyle.transform = `scale(${scale})`;
-    imgStyle.transformOrigin = position ?? "center top";
-  }
   return (
     <div
       className={cn(
@@ -109,14 +102,14 @@ function Avatar({
       )}
     >
       {src ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={src}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover"
-          style={imgStyle}
-          onError={(e) => {
-            (e.currentTarget as HTMLImageElement).style.display = "none";
+        <div
+          role="img"
+          aria-label={name}
+          className="absolute inset-0 rounded-full bg-no-repeat"
+          style={{
+            backgroundImage: `url(${src})`,
+            backgroundSize: scale ? `${scale * 100}%` : "cover",
+            backgroundPosition: position ?? "center top",
           }}
         />
       ) : (
