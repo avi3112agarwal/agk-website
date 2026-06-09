@@ -55,7 +55,7 @@ type Member = {
 const team: Member[] = [
   { name: "Ankit Sharma", role: "Team Leader", photo: "/team/ankit.jpg", photoScale: 1.9, photoPosition: "40% 18%" },
   { name: "Monika Ladha", role: "Team Leader", photo: "/team/monika.jpg" },
-  { name: "Yukta Lahoti", role: "Team Leader", photo: "/team/yukta.jpg", photoScale: 2.8, photoPosition: "12% 4%" },
+  { name: "Yukta Lahoti", role: "Team Leader", photo: "/team/yukta.png" },
   { name: "Vaibhav Rampuria", role: "Sr. Accountant" },
   { name: "Bhakti Lahoti", role: "Sr. Accountant" },
   { name: "Sanskar Jain", role: "Jr. Accountant" },
