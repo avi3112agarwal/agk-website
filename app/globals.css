@@ -18,17 +18,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Apply 90% zoom ONLY on desktop (>= 1024px). On phones/tablets,
-   browser zoom breaks viewport sizing, touch targets, and scroll
-   behaviour — so let mobile render at 100%. */
-@media (min-width: 1024px) {
-  body {
-    zoom: 0.9;
-  }
-}
-
-/* Prevent any element from causing horizontal overflow on mobile,
-   the most common cause of a "broken" mobile layout. */
+/* Prevent any element from causing horizontal overflow,
+   the most common cause of a "broken" layout. */
 html,
 body {
   overflow-x: hidden;
