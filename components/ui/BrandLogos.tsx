@@ -7,7 +7,9 @@ type ImgLogoProps = {
   style?: React.CSSProperties;
 };
 
-function makeImgLogo(src: string, alt: string) {
+// scale visually enlarges logos whose source PNG bakes in transparent
+// padding so much that the mark renders small inside its container.
+function makeImgLogo(src: string, alt: string, scale = 1) {
   return function ImgLogo({ className, style }: ImgLogoProps) {
     // eslint-disable-next-line @next/next/no-img-element
     return (
@@ -15,7 +17,11 @@ function makeImgLogo(src: string, alt: string) {
         src={src}
         alt={alt}
         className={className}
-        style={{ objectFit: "contain", ...style }}
+        style={{
+          objectFit: "contain",
+          ...(scale !== 1 ? { transform: `scale(${scale})` } : null),
+          ...style,
+        }}
       />
     );
   };
@@ -323,31 +329,32 @@ export function ShopifyLogo(props: LogoProps) {
 
 /* -------------------- Communication -------------------- */
 
-export const WhatsAppLogo = makeImgLogo("/communication/whatsapp.png", "WhatsApp");
+export const WhatsAppLogo = makeImgLogo("/communication/whatsapp.png", "WhatsApp", 1.8);
 
-export const OutlookLogo = makeImgLogo("/communication/outlook.png", "Outlook");
+export const OutlookLogo = makeImgLogo("/communication/outlook.png", "Outlook", 1.8);
 
-export const GmailLogo = makeImgLogo("/communication/gmail.png", "Gmail");
+export const GmailLogo = makeImgLogo("/communication/gmail.png", "Gmail", 1.8);
 
-export const SkypeLogo = makeImgLogo("/communication/skype.png", "Skype");
+export const SkypeLogo = makeImgLogo("/communication/skype.png", "Skype", 1.7);
 
 export const ZoomLogo = makeImgLogo("/communication/zoom.jpg", "Zoom");
 
 export const MicrosoftTeamsLogo = makeImgLogo(
   "/communication/teams.png",
   "Microsoft Teams",
+  1.7,
 );
 
-export const SlackLogo = makeImgLogo("/communication/slack.png", "Slack");
+export const SlackLogo = makeImgLogo("/communication/slack.png", "Slack", 1.5);
 
-export const TelegramLogo = makeImgLogo("/communication/telegram.png", "Telegram");
+export const TelegramLogo = makeImgLogo("/communication/telegram.png", "Telegram", 1.5);
 
 export const GoogleMeetLogo = makeImgLogo(
   "/communication/google-meet.png",
   "Google Meet",
 );
 
-export const WebexLogo = makeImgLogo("/communication/webex.svg", "Webex");
+export const WebexLogo = makeImgLogo("/communication/webex.svg", "Webex", 1.7);
 
 /* -------------------- Document storage -------------------- */
 
