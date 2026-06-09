@@ -6,3 +6,6 @@ out
 *.log
 .vercel
 .turbo
+
+# Generated PPT deliverables (regenerate locally with `node build-onboarding-deck.js`)
+*.pptx
